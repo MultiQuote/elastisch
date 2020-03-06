@@ -48,4 +48,5 @@
                                              (not (:version-dependent m))))}
   :mailing-list {:name "clojure-elasticsearch"
                  :archive "https://groups.google.com/group/clojure-elasticsearch"
-                 :post "clojure-elasticsearch@googlegroups.com"})
+                 :post "clojure-elasticsearch@googlegroups.com"}
+  :deploy-repositories [[:clojars {:sign-releases false}]])
