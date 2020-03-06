@@ -1,4 +1,4 @@
-;; Copyright 2011-2016 Michael S. Klishin, Alex Petrov, and the ClojureWerkz Team
+;; Copyright (c) 2011-2019 Michael S. Klishin, Alex Petrov, and the ClojureWerkz Team
 ;;
 ;; Licensed under the Apache License, Version 2.0 (the "License");
 ;; you may not use this file except in compliance with the License.
@@ -20,11 +20,10 @@
             [clojurewerkz.elastisch.native.response :as r])
   (:import clojure.lang.IPersistentMap
            org.elasticsearch.client.Client
-           [org.elasticsearch.action.get GetResponse MultiGetResponse]
+           (org.elasticsearch.action.get GetResponse MultiGetResponse)
            org.elasticsearch.action.count.CountResponse
            org.elasticsearch.action.delete.DeleteResponse
            org.elasticsearch.action.search.SearchResponse
-           [org.elasticsearch.action.suggest SuggestResponse]
            java.util.Map))
 
 (defn ^IPersistentMap create

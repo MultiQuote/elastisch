@@ -30,12 +30,14 @@ on Twitter.
 
 Elastisch is a not a young project. Started in late 2011, it has been used
 in production since the early days. Elastisch API is stable. 1.0 was
-released in September 2012, 2.0 in June 2014, 2.1 in December 2014,
-2.2 in January 2016.
+released in September 2012, 2.0 in June 2014, 3.0 in December 2018.
 
-Elastisch 3.x focuses on Elasticsearch 2.x support.
+
+## Supported ElasticSearch Versions
 
 Elastisch 6.x (master) targets ElasticSearch 6.x (and 5.x to the extent possible).
+
+Elastisch 3.x focuses on Elasticsearch 2.x support.
 
 
 ## Artifacts
@@ -57,7 +59,7 @@ Note: Elastisch documentation is not currently updated for version 3.0.
 
 With Leiningen:
 
-    [clojurewerkz/elastisch "3.0.0"]
+    [clojurewerkz/elastisch "3.0.1"]
 
 
 With Maven:
@@ -65,25 +67,8 @@ With Maven:
     <dependency>
       <groupId>clojurewerkz</groupId>
       <artifactId>elastisch</artifactId>
-      <version>3.0.0</version>
+      <version>3.0.1</version>
     </dependency>
-
-
-### The Most Recent 2.x Release
-
-With Leiningen:
-
-[![Clojars Project](http://clojars.org/clojurewerkz/elastisch/latest-version.svg)](http://clojars.org/clojurewerkz/elastisch)
-
-
-With Maven:
-
-    <dependency>
-      <groupId>clojurewerkz</groupId>
-      <artifactId>elastisch</artifactId>
-      <version>2.2.2</version>
-    </dependency>
-
 
 
 ## Documentation & Examples
@@ -142,7 +127,7 @@ Elastisch needs Elasticsearch running locally (`127.0.0.1`). `ES_CLUSTER_NAME` n
 with the name of the local cluster. To find it out, use
 
 ```
-curl http://localhost:9200/_cluster/nodes
+curl http://localhost:9200/_nodes/cluster
 ```
 
 ### Running Tests
@@ -175,7 +160,7 @@ with your changes and all tests pass, submit a pull request on GitHub.
 
 ## License
 
-Copyright (C) 2011-2016 Alex Petrov, Michael S. Klishin, and the ClojureWerkz Team.
+Copyright (c) 2011-2019 Alex Petrov, Michael S. Klishin, and the ClojureWerkz Team.
 
 Double-licensed under the [Eclipse Public License](https://www.eclipse.org/legal/epl-v10.html) (the same as Clojure) and
 [Apache Public License 2.0](http://www.apache.org/licenses/LICENSE-2.0.html).

@@ -1,4 +1,4 @@
-;; Copyright 2011-2016 Michael S. Klishin, Alex Petrov, and the ClojureWerkz Team
+;; Copyright (c) 2011-2019 Michael S. Klishin, Alex Petrov, and the ClojureWerkz Team
 ;;
 ;; Licensed under the Apache License, Version 2.0 (the "License");
 ;; you may not use this file except in compliance with the License.
@@ -21,12 +21,10 @@
            org.elasticsearch.action.admin.indices.create.CreateIndexResponse
            org.elasticsearch.action.admin.indices.delete.DeleteIndexResponse
            org.elasticsearch.action.admin.indices.stats.IndicesStatsResponse
-           org.elasticsearch.action.index.IndexResponse
            org.elasticsearch.action.admin.indices.mapping.get.GetMappingsResponse
            org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse
            org.elasticsearch.action.admin.indices.open.OpenIndexResponse
            org.elasticsearch.action.admin.indices.close.CloseIndexResponse
-           [org.elasticsearch.action.admin.indices.forcemerge.ForceMergeResponse]
            org.elasticsearch.action.admin.indices.flush.FlushResponse
            org.elasticsearch.action.admin.indices.refresh.RefreshResponse
            org.elasticsearch.action.admin.indices.alias.IndicesAliasesResponse

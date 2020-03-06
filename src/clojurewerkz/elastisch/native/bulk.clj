@@ -1,4 +1,4 @@
-;; Copyright 2011-2016 Michael S. Klishin, Alex Petrov, and the ClojureWerkz Team
+;; Copyright (c) 2011-2019 Michael S. Klishin, Alex Petrov, and the ClojureWerkz Team
 ;;
 ;; Licensed under the Apache License, Version 2.0 (the "License");
 ;; you may not use this file except in compliance with the License.
@@ -19,9 +19,7 @@
             [clojure.set :refer :all]
             [clojurewerkz.elastisch.native.conversion :as cnv]
             [clojurewerkz.elastisch.common.bulk :as common-bulk])
-  (:import clojure.lang.IPersistentMap
-           org.elasticsearch.client.Client
-           org.elasticsearch.action.bulk.BulkRequest
+  (:import org.elasticsearch.client.Client
            org.elasticsearch.action.bulk.BulkRequestBuilder
            org.elasticsearch.action.bulk.BulkResponse
            org.elasticsearch.action.index.IndexRequest
