@@ -214,7 +214,8 @@
   ```"
   ([^Connection conn index mapping-type] (search conn index mapping-type nil))
   ([^Connection conn index mapping-type opts]
-   (let [qk [:search_type :scroll :routing :preference :ignore_unavailable]
+   (let [qk [:search_type :scroll :routing :preference
+             :ignore_unavailable :allow_partial_search_results]
          qp (select-keys opts qk)
          body (apply dissoc (concat [opts] qk))]
      (rest/post conn (rest/search-url conn
@@ -229,7 +230,8 @@
   Multiple indexes can be passed in as a seq of strings."
   ([^Connection conn index] (search-all-types conn index nil))
   ([^Connection conn index opts]
-   (let [qk   [:search_type :scroll :routing :preference :ignore_unavailable]
+   (let [qk   [:search_type :scroll :routing :preference
+               :ignore_unavailable :allow_partial_search_results]
          qp   (select-keys opts qk)
          body (apply dissoc (concat [opts] qk))]
      (rest/post conn (rest/search-url conn
@@ -320,7 +322,9 @@
   ([^Connection conn index mapping-type query opts]
      (rest/post conn (rest/count-url conn
                                      (join-names index) (join-names mapping-type))
-                {:query-params (select-keys opts [:df :analyzer :default_operator :ignore_unavailable])
+                {:query-params (select-keys opts [:df :analyzer :default_operator
+                                                  :ignore_unavailable
+                                                  :allow_partial_search_results])
                  :body {:query query}})))
 
 (def ^{:doc "Optional parameters that all query-based delete functions share"
@@ -349,7 +353,8 @@
                   (join-names mapping-type))
                 {:query-params (select-keys opts
                                             (conj optional-delete-query-parameters
-                                                  :ignore_unavailable))
+                                                  :ignore_unavailable
+                                                  :allow_partial_search_results))
                  :body {:query query}})))
 
 (defn delete-by-query-across-all-types
@@ -367,7 +372,8 @@
                   (rest/delete-by-query-url conn (join-names index))
                   {:query-params (select-keys opts
                                               (conj optional-delete-query-parameters
-                                                    :ignore_unavailable))
+                                                    :ignore_unavailable
+                                                    :allow_partial_search_results))
                    :body {:query query}})))
 
 (defn delete-by-query-across-all-indexes-and-types
